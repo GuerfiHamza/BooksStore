@@ -20,3 +20,5 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 
 /*Route::get('/', 'Api\BooksController@index')->name('books.index');*/
 Route::get('/index', [App\Http\Controllers\Api\AppController::class, 'index']);
+Route::get('/book/{book}', [App\Http\Controllers\Api\AppController::class, 'show'])->name('books.show');
+Route::get('/book', [App\Http\Controllers\Api\AppController::class, 'search'])->name('books.search');
